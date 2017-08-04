@@ -80,22 +80,6 @@ namespace TrafficManagement
 
         private void Click1_Click(object sender, RoutedEventArgs e)
         {
-            /*var transformGroup = new TransformGroup();
-
-            var translateTransform = new TranslateTransform()
-            {
-                X = 0,
-                Y = actualHeight / 2 - 145
-            };
-            var rotateTransform = new RotateTransform()
-            {
-                Angle = 90
-            };
-
-            transformGroup.Children.Add(translateTransform);
-            transformGroup.Children.Add(rotateTransform);*/
-
-
             var myCar = new Image()
             {
                 Source = new BitmapImage(new Uri("ms-appx:///Assets/RedCar.png")),
@@ -116,51 +100,77 @@ namespace TrafficManagement
 
         private void Click2_Click(object sender, RoutedEventArgs e)
         {
-            MoreForward(carList[(carNo-1)]);
+            carList[(carNo - 1)].AnimateTransform("Translate", Orientation.Horizontal, null, LeftRoad.ActualWidth - 140, duration: 3000, easing: new SineEase
+            {
+                EasingMode = EasingMode.EaseInOut
+            });
         }
 
-        private void MoreForward(UIElement element)
+        private void Click4_Click(object sender, RoutedEventArgs e)
         {
-            Storyboard storyboard = new Storyboard();
-
-            DoubleAnimation doubleAnimation = new DoubleAnimation()
+            carList[(carNo - 1)].AnimateTransform("Translate", Orientation.Vertical, null, actualHeight, duration: 3000, easing: new SineEase
             {
-                Duration = new Duration(new TimeSpan(0, 0, 3)),
-                To = LeftRoad.ActualWidth - 140,
-                /*EasingFunction = new CircleEase()
-                {
-                    EasingMode = EasingMode.EaseOut
-                }*/
-            };
-
-            Storyboard.SetTarget(doubleAnimation, element.RenderTransform);
-            Storyboard.SetTargetProperty(doubleAnimation, "X");
-            storyboard.Children.Add(doubleAnimation);
-
-            storyboard.Begin();
+                EasingMode = EasingMode.EaseInOut
+            });
         }
 
-        private void Turn(UIElement element)
+        private void Click3_Click(object sender, RoutedEventArgs e)
         {
-            Storyboard storyboard = new Storyboard();
-
-            DoubleAnimation doubleAnimation = new DoubleAnimation()
+            carList[(carNo - 1)].AnimateTransform("Translate", Orientation.Horizontal, null, LeftRoad.ActualWidth, duration: 3000, easing: new SineEase
             {
-                Duration = new Duration(new TimeSpan(0, 0, 2)),
-                To = LeftRoad.ActualWidth - 140,
-                EasingFunction = new CircleEase()
-                {
-                    EasingMode = EasingMode.EaseOut
-                }
-            };
+                EasingMode = EasingMode.EaseOut
+            });
 
-            Storyboard.SetTarget(doubleAnimation, element.RenderTransform);
-            Storyboard.SetTargetProperty(doubleAnimation, "X");
-            storyboard.Children.Add(doubleAnimation);
-
-
-            storyboard.Begin();
+            carList[(carNo - 1)].AnimateTransform("Translate", Orientation.Vertical, null, actualHeight / 2 - 75, duration: 3000, easing: new SineEase
+            {
+                EasingMode = EasingMode.EaseIn
+            });
+            carList[(carNo - 1)].AnimateTransform("Rotation", null, null, 90, duration: 3000, startTime: 0);
         }
 
     }
+
+    public static class Helpers
+    {
+        public static void AnimateTransform(this UIElement target, string propertyToAnimate, Orientation? orientation, double? from, double to, int duration = 3000, int startTime = 0, EasingFunctionBase easing = null)
+        {
+            if (easing == null)
+            {
+                easing = new ExponentialEase();
+            }
+
+            var transform = target.RenderTransform as CompositeTransform;
+            if (transform == null)
+            {
+                transform = new CompositeTransform();
+                target.RenderTransform = transform;
+            }
+            target.RenderTransformOrigin = new Point(0.5, 0.5);
+
+            var db = new DoubleAnimation
+            {
+                To = to,
+                From = from,
+                EasingFunction = easing,
+                Duration = TimeSpan.FromMilliseconds(duration)
+            };
+            Storyboard.SetTarget(db, target);
+
+            var axis = string.Empty;
+            if (orientation.HasValue)
+            {
+                axis = orientation.Value == Orientation.Horizontal ? "X" : "Y";
+            }
+            Storyboard.SetTargetProperty(db, $"(UIElement.RenderTransform).(CompositeTransform.{propertyToAnimate}{axis})");
+
+            var sb = new Storyboard
+            {
+                BeginTime = TimeSpan.FromMilliseconds(startTime)
+            };
+
+            sb.Children.Add(db);
+            sb.Begin();
+        }
+    }
+
 }
