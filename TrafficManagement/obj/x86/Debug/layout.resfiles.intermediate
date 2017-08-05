@@ -1,11 +1,15 @@
 WinMetadata\Windows.winmd
 Assets\LockScreenLogo.scale-200.png
-Assets\RedCar.png
 Assets\SplashScreen.scale-200.png
 Assets\Square150x150Logo.scale-200.png
 Assets\Square44x44Logo.scale-200.png
 Assets\Square44x44Logo.targetsize-24_altform-unplated.png
 Assets\StoreLogo.png
+Assets\Vehicle\BlueCar.png
+Assets\Vehicle\GreenCar.png
+Assets\Vehicle\PinkCar.png
+Assets\Vehicle\RedCar.png
+Assets\Vehicle\YellowCar.png
 Assets\Wide310x150Logo.scale-200.png
 TrafficManagement.xr.xml
 Properties\Default.rd.xml

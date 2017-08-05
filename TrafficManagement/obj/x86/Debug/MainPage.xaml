@@ -15,73 +15,116 @@
     <Grid Background="Green">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="300"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="140"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="140"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid x:ConnectionId='2' Name="RightRoad" Grid.Row="1" Grid.Column="0" Background="Black">
-            <Line x:ConnectionId='41' Name="RightRoadTopLine" HorizontalAlignment="Right" Margin="0,75,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
-            <Line x:ConnectionId='42' Name="RightRoadLine" HorizontalAlignment="Right" VerticalAlignment="Center" StrokeThickness="3" Stroke="White"/>
-            <Line x:ConnectionId='43' Name="RightRoadBottomLine" HorizontalAlignment="Right" Margin="0,225,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+        <Grid x:ConnectionId='2' Name="LeftTopVerticalRoad" Grid.Row="0" Grid.Column="1" Background="Black">
+            <Line x:ConnectionId='73' Name="LeftTopVerticalRoadLineL" Margin="35,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+            <Line x:ConnectionId='74' Name="LeftTopVerticalRoadLine" Margin="70,0,0,0" VerticalAlignment="Top" StrokeThickness="2" Stroke="White"/>
+            <Line x:ConnectionId='75' Name="LeftTopVerticalRoadLineR" Margin="105,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
         </Grid>
-        <Grid x:ConnectionId='3' Name="LeftRoad" Grid.Row="1" Grid.Column="2" Background="Black">
-            <Line x:ConnectionId='38' Name="LeftRoadTopLine" HorizontalAlignment="Right" Margin="0,75,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
-            <Line x:ConnectionId='39' Name="LeftRoadLine" HorizontalAlignment="Left" VerticalAlignment="Center" StrokeThickness="3" Stroke="White"/>
-            <Line x:ConnectionId='40' Name="LeftRoadBottomLine" HorizontalAlignment="Right" Margin="0,225,0,1" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+        <Grid x:ConnectionId='3' Name="RightTopVerticalRoad" Grid.Row="0" Grid.Column="3" Background="Black">
+            <Line x:ConnectionId='70' Name="RightTopVerticalRoadLineL" Margin="35,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+            <Line x:ConnectionId='71' Name="RightTopVerticalRoadLine" Margin="70,0,0,0" VerticalAlignment="Top" StrokeThickness="2" Stroke="White"/>
+            <Line x:ConnectionId='72' Name="RightTopVerticalRoadLineR" Margin="105,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
         </Grid>
-        <Grid x:ConnectionId='4' Name="TopRoad" Grid.Row="0" Grid.Column="1" Background="Black">
-            <Line x:ConnectionId='35' Name="TopRoadRightLine" Margin="75,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
-            <Line x:ConnectionId='36' Name="TopRoadLine" HorizontalAlignment="Center" VerticalAlignment="Top" StrokeThickness="3" Stroke="White"/>
-            <Line x:ConnectionId='37' Name="TopRoadLeftLine" Margin="225,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+        <Grid x:ConnectionId='4' Name="LeftTopHorizontalRoad" Grid.Row="1" Grid.Column="0" Background="Black">
+            <Line x:ConnectionId='67' Name="LeftTopHorizontalRoadLineT" HorizontalAlignment="Right" Margin="0,35,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+            <Line x:ConnectionId='68' Name="LeftTopHorizontalRoadLine" HorizontalAlignment="Right" Margin="0,70,0,0" StrokeThickness="2" Stroke="White"/>
+            <Line x:ConnectionId='69' Name="LeftTopHorizontalRoadLineB" HorizontalAlignment="Right" Margin="0,105,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
         </Grid>
-        <Grid x:ConnectionId='5' Name="BottomRoad" Grid.Row="2" Grid.Column="1" Background="Black">
-            <Line x:ConnectionId='32' Name="BottomRoadRightLine" Margin="75,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
-            <Line x:ConnectionId='33' Name="BottomRoadLine" HorizontalAlignment="Center" VerticalAlignment="Bottom" StrokeThickness="3" Stroke="White"/>
-            <Line x:ConnectionId='34' Name="BottomRoadLeftLine" Margin="225,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+        <Grid x:ConnectionId='5' Name="CenterTopHorizontalRoad" Grid.Row="1" Grid.Column="2" Background="Black">
+            <Line x:ConnectionId='64' Name="CenterTopHorizontalRoadLineT" HorizontalAlignment="Right" Margin="0,35,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+            <Line x:ConnectionId='65' Name="CenterTopHorizontalRoadLine" HorizontalAlignment="Right" Margin="0,70,0,0" StrokeThickness="2" Stroke="White"/>
+            <Line x:ConnectionId='66' Name="CenterTopHorizontalRoadLineB" HorizontalAlignment="Right" Margin="0,105,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
         </Grid>
-        <Grid x:ConnectionId='6' Name="CentreRoad"  Grid.Row="1" Grid.Column="1" Background="Black">
-            <Grid x:ConnectionId='12' Name="LeftSignalLight" VerticalAlignment="Center" HorizontalAlignment="Left" Width="Auto" Height="Auto" Margin="20,0,0,0">
-                <Rectangle x:ConnectionId='28' x:Name="LeftSignalFrame" Fill="DarkGray" HorizontalAlignment="Left" Height="125" Stroke="DarkGray" VerticalAlignment="Top" Width="45" RadiusY="13" RadiusX="13"/>
-                <Ellipse x:ConnectionId='29' x:Name="LeftSignalRedLight" Fill="Red" HorizontalAlignment="Left" Height="35" Margin="5,5,5,0" Stroke="Black" VerticalAlignment="Top" Width="35"/>
-                <Ellipse x:ConnectionId='30' x:Name="LeftSignalYellowLight" Fill="Yellow" HorizontalAlignment="Left" Height="35" Margin="5,45,5,0" Stroke="Black" VerticalAlignment="Top" Width="35"/>
-                <Ellipse x:ConnectionId='31' x:Name="LeftSignalGreenLight" Fill="Green" HorizontalAlignment="Left" Height="35" Margin="5,85,5,0" Stroke="Black" VerticalAlignment="Top" Width="35"/>
-            </Grid>
-            <Grid x:ConnectionId='13' Name="RightSignalLight" VerticalAlignment="Center" HorizontalAlignment="Right" Width="Auto" Height="Auto" Margin="0,0,20,0">
-                <Rectangle x:ConnectionId='24' x:Name="RightSignalFrame" Fill="DarkGray" HorizontalAlignment="Left" Height="125" Stroke="DarkGray" VerticalAlignment="Top" Width="45" RadiusY="13" RadiusX="13"/>
-                <Ellipse x:ConnectionId='25' x:Name="RightSignalRedLight" Fill="Red" HorizontalAlignment="Left" Height="35" Margin="5,5,5,0" Stroke="Black" VerticalAlignment="Top" Width="35"/>
-                <Ellipse x:ConnectionId='26' x:Name="RightSignalYellowLight" Fill="Yellow" HorizontalAlignment="Left" Height="35" Margin="5,45,5,0" Stroke="Black" VerticalAlignment="Top" Width="35"/>
-                <Ellipse x:ConnectionId='27' x:Name="RightSignalGreenLight" Fill="Green" HorizontalAlignment="Left" Height="35" Margin="5,85,5,0" Stroke="Black" VerticalAlignment="Top" Width="35"/>
-            </Grid>
-            <Grid x:ConnectionId='14' Name="TopSignalLight" VerticalAlignment="Top" HorizontalAlignment="Center" Width="Auto" Height="Auto" Margin="0,20,0,0">
-                <Rectangle x:ConnectionId='20' x:Name="TopSignalFrame" Fill="DarkGray" HorizontalAlignment="Left" Height="45" Stroke="DarkGray" VerticalAlignment="Top" Width="125" RadiusY="13" RadiusX="13"/>
-                <Ellipse x:ConnectionId='21' x:Name="TopSignalRedLight" Fill="Red" HorizontalAlignment="Left" Height="35" Margin="5,5,5,0" Stroke="Black" VerticalAlignment="Top" Width="35"/>
-                <Ellipse x:ConnectionId='22' x:Name="TopSignalYellowLight" Fill="Yellow" HorizontalAlignment="Left" Height="35" Margin="45,5,5,0" Stroke="Black" VerticalAlignment="Top" Width="35"/>
-                <Ellipse x:ConnectionId='23' x:Name="TopSignalGreenLight" Fill="Green" HorizontalAlignment="Left" Height="35" Margin="85,5,5,0" Stroke="Black" VerticalAlignment="Top" Width="35"/>
-            </Grid>
-            <Grid x:ConnectionId='15' Name="BottomSignalLight" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="Auto" Height="Auto" Margin="0,0,0,20">
-                <Rectangle x:ConnectionId='16' x:Name="BottomSignalFrame" Fill="DarkGray" HorizontalAlignment="Left" Height="45" Stroke="DarkGray" VerticalAlignment="Top" Width="125" RadiusY="13" RadiusX="13"/>
-                <Ellipse x:ConnectionId='17' x:Name="BottomSignalRedLight" Fill="Red" HorizontalAlignment="Left" Height="35" Margin="5,5,5,0" Stroke="Black" VerticalAlignment="Top" Width="35"/>
-                <Ellipse x:ConnectionId='18' x:Name="BottomSignalYellowLight" Fill="Yellow" HorizontalAlignment="Left" Height="35" Margin="45,5,5,0" Stroke="Black" VerticalAlignment="Top" Width="35"/>
-                <Ellipse x:ConnectionId='19' x:Name="BottomSignalGreenLight" Fill="Green" HorizontalAlignment="Left" Height="35" Margin="85,5,5,0" Stroke="Black" VerticalAlignment="Top" Width="35"/>
-            </Grid>
+        <Grid x:ConnectionId='6' Name="RightTopHorizontalRoad" Grid.Row="1" Grid.Column="4" Background="Black">
+            <Line x:ConnectionId='61' Name="RightTopHorizontalRoadLineT" HorizontalAlignment="Right" Margin="0,35,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+            <Line x:ConnectionId='62' Name="RightTopHorizontalRoadLine" HorizontalAlignment="Right" Margin="0,70,0,0" StrokeThickness="2" Stroke="White"/>
+            <Line x:ConnectionId='63' Name="RightTopHorizontalRoadLineB" HorizontalAlignment="Right" Margin="0,105,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
         </Grid>
-        <Grid x:ConnectionId='7' Name="VehicleGrid" Grid.RowSpan="3" Grid.ColumnSpan="3">
-            <StackPanel Margin="0,50,0,0">
-                <Button x:ConnectionId='8' Name="Click1" Content="click1"                     >
+        <Grid x:ConnectionId='7' Name="LeftCenterVerticalRoad" Grid.Row="2" Grid.Column="1" Background="Black">
+            <Line x:ConnectionId='58' Name="LeftCenterVerticalRoadLineL" Margin="35,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+            <Line x:ConnectionId='59' Name="LeftCenterVerticalRoadLine" Margin="70,0,0,0" VerticalAlignment="Top" StrokeThickness="2" Stroke="White"/>
+            <Line x:ConnectionId='60' Name="LeftCenterVerticalRoadLineR" Margin="105,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+        </Grid>
+        <Grid x:ConnectionId='8' Name="RightCenterVerticalRoad" Grid.Row="2" Grid.Column="3" Background="Black">
+            <Line x:ConnectionId='55' Name="RightCenterVerticalRoadLineL" Margin="35,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+            <Line x:ConnectionId='56' Name="RightCenterVerticalRoadLine" Margin="70,0,0,0" VerticalAlignment="Top" StrokeThickness="2" Stroke="White"/>
+            <Line x:ConnectionId='57' Name="RightCenterVerticalRoadLineR" Margin="105,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+        </Grid>
+        <Grid x:ConnectionId='9' Name="LeftBottomHorizontalRoad" Grid.Row="3" Grid.Column="0" Background="Black">
+            <Line x:ConnectionId='52' Name="LeftBottomHorizontalRoadLineT" HorizontalAlignment="Right" Margin="0,35,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+            <Line x:ConnectionId='53' Name="LeftBottomHorizontalRoadLine" HorizontalAlignment="Right" Margin="0,70,0,0" StrokeThickness="2" Stroke="White"/>
+            <Line x:ConnectionId='54' Name="LeftBottomHorizontalRoadLineB" HorizontalAlignment="Right" Margin="0,105,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+        </Grid>
+        <Grid x:ConnectionId='10' Name="CenterBottomHorizontalRoad" Grid.Row="3" Grid.Column="2" Background="Black">
+            <Line x:ConnectionId='49' Name="CenterBottomHorizontalRoadLineT" HorizontalAlignment="Right" Margin="0,35,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+            <Line x:ConnectionId='50' Name="CenterBottomHorizontalRoadLine" HorizontalAlignment="Right" Margin="0,70,0,0" StrokeThickness="2" Stroke="White"/>
+            <Line x:ConnectionId='51' Name="CenterBottomHorizontalRoadLineB" HorizontalAlignment="Right" Margin="0,105,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+        </Grid>
+        <Grid x:ConnectionId='11' Name="RightBottomHorizontalRoad" Grid.Row="3" Grid.Column="4" Background="Black">
+            <Line x:ConnectionId='46' Name="RightBottomHorizontalRoadLineT" HorizontalAlignment="Right" Margin="0,35,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+            <Line x:ConnectionId='47' Name="RightBottomHorizontalRoadLine" HorizontalAlignment="Right" Margin="0,70,0,0" StrokeThickness="2" Stroke="White"/>
+            <Line x:ConnectionId='48' Name="RightBottomHorizontalRoadLineB" HorizontalAlignment="Right" Margin="0,105,0,0" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+        </Grid>
+        <Grid x:ConnectionId='12' Name="LeftBottomVerticalRoad" Grid.Row="4" Grid.Column="1" Background="Black">
+            <Line x:ConnectionId='43' Name="LeftBottomVerticalRoadLineL" Margin="35,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+            <Line x:ConnectionId='44' Name="LeftBottomVerticalRoadLine" Margin="70,0,0,0" VerticalAlignment="Top" StrokeThickness="2" Stroke="White"/>
+            <Line x:ConnectionId='45' Name="LeftBottomVerticalRoadLineR" Margin="105,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+        </Grid>
+        <Grid x:ConnectionId='13' Name="RightBottomVerticalRoad" Grid.Row="4" Grid.Column="3" Background="Black">
+            <Line x:ConnectionId='40' Name="RightBottomVerticalRoadLineL" Margin="35,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+            <Line x:ConnectionId='41' Name="RightBottomVerticalRoadLine" Margin="70,0,0,0" VerticalAlignment="Top" StrokeThickness="2" Stroke="White"/>
+            <Line x:ConnectionId='42' Name="RightBottomVerticalRoadLineR" Margin="105,0,0,0" VerticalAlignment="Top" StrokeThickness="2" StrokeDashArray="10,10" Stroke="White"/>
+        </Grid>
+        <Grid x:ConnectionId='14' Name="LeftTopJunction" Grid.Row="1" Grid.Column="1" Background="Black" Padding="10">
+            <Ellipse x:ConnectionId='36' x:Name="LeftTopSignalLightL" Fill="Red" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="Black"/>
+            <Ellipse x:ConnectionId='37' x:Name="LeftTopSignalLightT" Fill="Red" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="Black"/>
+            <Ellipse x:ConnectionId='38' x:Name="LeftTopSignalLightR" Fill="Red" Width="35" Height="35" HorizontalAlignment="Right" VerticalAlignment="Center" Stroke="Black"/>
+            <Ellipse x:ConnectionId='39' x:Name="LeftTopSignalLightB" Fill="Red" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Bottom" Stroke="Black"/>
+        </Grid>
+        <Grid x:ConnectionId='15' Name="RightTopJunction" Grid.Row="1" Grid.Column="3" Background="Black" Padding="10">
+            <Ellipse x:ConnectionId='32' x:Name="RightTopSignalLightL" Fill="Red" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="Black"/>
+            <Ellipse x:ConnectionId='33' x:Name="RightTopSignalLightT" Fill="Red" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="Black"/>
+            <Ellipse x:ConnectionId='34' x:Name="RightTopSignalLightR" Fill="Red" Width="35" Height="35" HorizontalAlignment="Right" VerticalAlignment="Center" Stroke="Black"/>
+            <Ellipse x:ConnectionId='35' x:Name="RightTopSignalLightB" Fill="Red" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Bottom" Stroke="Black"/>
+        </Grid>
+        <Grid x:ConnectionId='16' Name="LeftBottomJunction" Grid.Row="3" Grid.Column="1" Background="Black" Padding="10">
+            <Ellipse x:ConnectionId='28' x:Name="LeftBottomignalLightL" Fill="Red" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="Black"/>
+            <Ellipse x:ConnectionId='29' x:Name="LeftBottomSignalLightT" Fill="Red" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="Black"/>
+            <Ellipse x:ConnectionId='30' x:Name="LeftBottomSignalLightR" Fill="Red" Width="35" Height="35" HorizontalAlignment="Right" VerticalAlignment="Center" Stroke="Black"/>
+            <Ellipse x:ConnectionId='31' x:Name="LeftBottomSignalLightB" Fill="Red" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Bottom" Stroke="Black"/>
+        </Grid>
+        <Grid x:ConnectionId='17' Name="RightBottomJunction" Grid.Row="3" Grid.Column="3" Background="Black" Padding="10">
+            <Ellipse x:ConnectionId='24' x:Name="RightBottomSignalLightL" Fill="Red" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center" Stroke="Black"/>
+            <Ellipse x:ConnectionId='25' x:Name="RightBottomSignalLightT" Fill="Red" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="Black"/>
+            <Ellipse x:ConnectionId='26' x:Name="RightBottomSignalLightR" Fill="Red" Width="35" Height="35" HorizontalAlignment="Right" VerticalAlignment="Center" Stroke="Black"/>
+            <Ellipse x:ConnectionId='27' x:Name="RightBottomSignalLightB" Fill="Red" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Bottom" Stroke="Black"/>
+        </Grid>
+        <Grid x:ConnectionId='18' Name="VehicleGrid" Grid.RowSpan="5" Grid.ColumnSpan="5"/>
+        <Grid x:ConnectionId='19' Name="ContentGrid" Grid.Row="2" Grid.Column="2">
+            <StackPanel Margin="50">
+                <Button x:ConnectionId='20' Name="Click1" Content="click1"                     >
                     <Button.Transitions>
                         <TransitionCollection>
                             <EntranceThemeTransition/>
                         </TransitionCollection>
                     </Button.Transitions>
                 </Button>
-                <Button x:ConnectionId='9' Name="Click2" Content="click2"                     />
-                <Button x:ConnectionId='10' Name="Click3" Content="click3"                     />
-                <Button x:ConnectionId='11' Name="Click4" Content="click4"                     />
+                <Button x:ConnectionId='21' Name="Click2" Content="click2"                     />
+                <Button x:ConnectionId='22' Name="Click3" Content="click3"                     />
+                <Button x:ConnectionId='23' Name="Click4" Content="click4"                     />
             </StackPanel>
         </Grid>
     </Grid>
